@@ -1,3 +1,4 @@
+import 'package:dash_board/utils/SizeConfing.dart';
 import 'package:flutter/material.dart';
 
 class Adaptivelayou extends StatelessWidget {
@@ -11,9 +12,9 @@ class Adaptivelayou extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        if (constraints.maxWidth < 500) {
+        if (constraints.maxWidth < SizeConfing.TabletLayout) {
           return mobileLayout(context);
-        } else if (constraints.maxWidth < 900) {
+        } else if (constraints.maxWidth < SizeConfing.DesktobLayout) {
           return TabletLayout(context);
         } else {
           return DesktobLayout(context);
